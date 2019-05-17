@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:showIn="@layout/activity_main"
+>
+
+    <Button
+            android:id="@+id/button"
+            android:text="Authenticate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    />
+
+    <Button
+            android:id="@+id/encryptBtn"
+            android:text="Encrypt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/button"
+    />
+
+    <Button
+            android:id="@+id/decryptBtn"
+            android:text="Decrypt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/encryptBtn"
+    />
+
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/tv"
+              app:layout_constraintTop_toBottomOf="@id/decryptBtn"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintRight_toRightOf="parent"
+              android:text="Generate AES Key, require user authentication 1 seconds."
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
