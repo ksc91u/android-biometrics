@@ -44,7 +44,7 @@ class Main2Activity : AppCompatActivity() {
                     /* OR */
 
                     // android.security.keystore.UserNotAuthenticatedException: User not authenticated
-                    init(Cipher.ENCRYPT_MODE, key)
+                    //init(Cipher.ENCRYPT_MODE, key)
                 }
 
             val biometricPrompt = BiometricPrompt(
@@ -85,10 +85,11 @@ class Main2Activity : AppCompatActivity() {
                 }
             )
             val prompt = BiometricPrompt.PromptInfo.Builder().setTitle("Encrypt")
-                .setNegativeButtonText("cancel").build()
+                .setDeviceCredentialAllowed(true)
+                .build()
             val cryptObject = BiometricPrompt.CryptoObject(cipher)
 
-            biometricPrompt.authenticate(prompt, cryptObject)
+            biometricPrompt.authenticate(prompt)
 
         }
 
@@ -116,7 +117,7 @@ class Main2Activity : AppCompatActivity() {
                     .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_PKCS7)
                     .setRandomizedEncryptionRequired(true)
                     .setUserAuthenticationRequired(true)
-                    .setUserAuthenticationValidityDurationSeconds(1)
+                    .setUserAuthenticationValidityDurationSeconds(60)
                     .build()
                 init(keySpec)
             }

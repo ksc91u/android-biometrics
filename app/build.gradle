@@ -5,11 +5,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "ksc91u.androidkeystore"
-        minSdkVersion 28
-        targetSdkVersion 28
+        minSdkVersion 29
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,7 +25,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // https://mvnrepository.com/artifact/androidx.biometric/biometric
-    implementation group: 'androidx.biometric', name: 'biometric', version: '1.0.0-alpha04'
+//    implementation group: 'androidx.biometric', name: 'biometric', version: '1.0.0-alpha04'
+    implementation group: 'androidx.biometric', name: 'biometric', version: '1.0.0-SNAPSHOT'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.google.android.material:material:1.1.0-alpha02'
